@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import AnnouncementForm from './AnnouncementForm';
+import Announcement from './Announcement';
 
-function App() {
+const App = () => {
+  const [announcements, setAnnouncements] = useState([]);
+
+  const handleSubmit = (announcement) => {
+    setAnnouncements([announcement, ...announcements]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {announcements.length > 0 && (
+        <Announcement
+          message={announcements[0].message}
+          name={announcements[0].name}
+          date={announcements[0].date}
+        />
+      )}
+      <AnnouncementForm onSubmit={handleSubmit} />
     </div>
   );
-}
+};
 
-export default App;
+export default App; 

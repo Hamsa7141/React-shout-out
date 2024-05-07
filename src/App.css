@@ -62,3 +62,32 @@ form button {
   border: none;
   cursor: pointer;
 }
+.announcement {
+  background-color: #e9ecef;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+form input,
+form button {
+  margin-bottom: 15px;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+
+form button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
